@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.renatam</groupId> <!-- Alterar -->
-	<artifactId>Exercicio1</artifactId> <!-- Alterar -->
+	<groupId>com.renatam</groupId> 
+	<artifactId>Sistema Bancario</artifactId> <!-- Alterar -->
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Exercicio1</name> <!-- Alterar -->
+	<name>Sistema Bancario</name> <!-- Alterar -->
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -36,7 +36,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>Exercicio1</finalName>
+		<finalName>Sistema Bancario</finalName>
 		<pluginManagement>
 			<plugins>
 				<!-- Define o compilador de plugins -->
