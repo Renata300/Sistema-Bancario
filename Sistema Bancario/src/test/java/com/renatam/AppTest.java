@@ -7,7 +7,25 @@ import org.junit.Test;
 public class AppTest 
 {
     @Test
-    public void shouldAnswerWithTrue()
+    public void siverGold()
+    {
+        assertTrue( true );
+    }
+
+    @Test
+    public void goldPlatinum()
+    {
+        assertTrue( true );
+    }
+
+    @Test
+    public void platinumGold()
+    {
+        assertTrue( true );
+    }
+
+    @Test
+    public void goldSilver()
     {
         assertTrue( true );
     }
