@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.renatam</groupId> 
-	<artifactId>Sistema-Bancario</artifactId> <!-- Alterar -->
+	<groupId>com.dessoftware</groupId> <!-- Alterar -->
+	<artifactId>sistema-bancario</artifactId> <!-- Alterar -->
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Sistema Bancario</name> <!-- Alterar -->
+	<name>sistema-bancario</name> <!-- Alterar -->
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -16,18 +16,14 @@
 
 	<dependencies>
 		<!-- Dependencias do JUnit 5 -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.6.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.6.2</version>
-			<scope>test</scope>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+
 		<!-- Dependencias do mockito -->
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -36,7 +32,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>Sistema Bancario</finalName>
+		<finalName>sistema-bancario</finalName>
 		<pluginManagement>
 			<plugins>
 				<!-- Define o compilador de plugins -->
@@ -61,7 +57,7 @@
 							<configuration>
 								<transformers>
 									<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-										<main-class>com.renatam.App</main-class>
+										<main-class>com.renatam.ContaMagica</main-class>
 									</transformer>
 								</transformers>
 							</configuration>
@@ -74,7 +70,7 @@
 					<artifactId>exec-maven-plugin</artifactId>
 					<version>3.0.0</version>
 					<configuration>
-						<mainClass>com.renatam.App</mainClass>
+						<mainClass>com.renatam.ContaMagica</mainClass>
 					</configuration>
 				</plugin>
 				<!-- Plugin para gerar relatório de testes -->
