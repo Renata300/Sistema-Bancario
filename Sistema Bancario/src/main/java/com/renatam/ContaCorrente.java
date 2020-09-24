@@ -18,13 +18,24 @@ public class ContaCorrente{
         return saldo;
     }
     public Categoria getCategoria(){    //implementar
+        if(saldo >= 5000){
+            categoria = GOLD;
+        }
+        else if(saldo >= 200000){
+            categoria = PLATINUM;
+        }
+        else{
+            categoria = SILVER;
+        }
         return categoria;
     }
     public boolean deposito(double valor){  //implementar
-        return deposito;
+        saldo += valor;
+        return saldo;
     }
     public boolean retirada(double valor){  //implementar
-        return retirada;
+        saldo -= valor;
+        return saldo;
     }
 
 }

@@ -7,6 +7,21 @@ import org.junit.Test;
 public class AppTest 
 {
     @Test
+    public void saldoInicialBaixo()
+    {
+        assertTrue( true );
+    }
+    @Test
+    public void saldoInicialMedio()
+    {
+        assertTrue( true );
+    }
+    @Test
+    public void saldoInicialAlto()
+    {
+        assertTrue( true );
+    }
+    @Test
     public void siverGold()
     {
         assertTrue( true );
