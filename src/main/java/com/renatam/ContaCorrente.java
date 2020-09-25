@@ -1,8 +1,10 @@
 package com.renatam;
 
 public class ContaCorrente {
-    private final int LIMITE_CONTA_GOLD = 50000;
-    private final int LIMITE_CONTA_PLATINUM = 200000;
+    private final int UPDATE_GOLD = 50000;
+    private final int UPDATE_PLATINUM = 200000;
+    private final int DOWNGRADE_SILVER = 25000;
+    private final int DOWNGRADE_GOLD = 100000;
 
     private String numeroConta;
     private String nomeCorrentista;
@@ -48,26 +50,32 @@ public class ContaCorrente {
 
         saldo -= valor;
 
-        this.checarUpgradeDeConta();
+        this.checarDowngradeDeConta();
 
         return true;
     }
 
     private void checarUpgradeDeConta() {
-        if(this.getSaldo() < LIMITE_CONTA_GOLD) {
-            if(this.getCategoria() == Categoria.PLATINUM) {
-                this.categoria = Categoria.GOLD;
-            } else {
-                this.categoria = Categoria.SILVER;
-            }
-        } else if(this.getSaldo() >= LIMITE_CONTA_GOLD && this.getSaldo() < LIMITE_CONTA_PLATINUM) {
+        if(this.getSaldo() >= UPDATE_GOLD && this.getSaldo() < UPDATE_PLATINUM) {
             this.categoria = Categoria.GOLD;
-        } else if(this.getSaldo() >= LIMITE_CONTA_PLATINUM) {
+        } else if(this.getSaldo() >= UPDATE_PLATINUM) {
             if(this.getCategoria() == Categoria.SILVER) {
                 this.categoria = Categoria.GOLD;
             } else {
                 this.categoria = Categoria.PLATINUM;
             }
+        }
+    }
+
+    private void checarDowngradeDeConta() {
+        if(this.getSaldo() < DOWNGRADE_SILVER) {
+            if(this.getCategoria() == Categoria.PLATINUM) {
+                this.categoria = Categoria.GOLD;
+            } else {
+                this.categoria = Categoria.SILVER;
+            }
+        } else if(this.getSaldo() <= DOWNGRADE_GOLD) {
+            this.categoria = Categoria.GOLD;
         }
     }
 }
