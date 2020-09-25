@@ -11,19 +11,22 @@ public class ContaCorrente {
     private double deposito;
     private double retirada;
 
-    public ContaCorrente() {        
+    public ContaCorrente(String numeroConta, String nomeCorrentista) {
+        this.categoria = Categoria.SILVER;
+        this.numeroConta = numeroConta;
+        this.nomeCorrentista = nomeCorrentista;
     }
 
     public String getNumeroConta() {
-        return numeroConta;
+        return this.numeroConta;
     }
 
     public String getNomeCorrentista() {
-        return nomeCorrentista;
+        return this.nomeCorrentista;
     }
 
     public double getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
     public Categoria getCategoria() {      
@@ -39,6 +42,10 @@ public class ContaCorrente {
     }
 
     public boolean retirada(double valor) {
+        if(valor > this.getSaldo()) {
+            return false;
+        }
+
         saldo -= valor;
 
         this.checarUpgradeDeConta();
@@ -48,11 +55,19 @@ public class ContaCorrente {
 
     private void checarUpgradeDeConta() {
         if(this.getSaldo() < LIMITE_CONTA_GOLD) {
-            this.categoria = Categoria.SILVER;
-        } else if(this.getSaldo() >= LIMITE_CONTA_GOLD) {
+            if(this.getCategoria() == Categoria.PLATINUM) {
+                this.categoria = Categoria.GOLD;
+            } else {
+                this.categoria = Categoria.SILVER;
+            }
+        } else if(this.getSaldo() >= LIMITE_CONTA_GOLD && this.getSaldo() < LIMITE_CONTA_PLATINUM) {
             this.categoria = Categoria.GOLD;
         } else if(this.getSaldo() >= LIMITE_CONTA_PLATINUM) {
-            this.categoria = Categoria.PLATINUM;
+            if(this.getCategoria() == Categoria.SILVER) {
+                this.categoria = Categoria.GOLD;
+            } else {
+                this.categoria = Categoria.PLATINUM;
+            }
         }
     }
 }
