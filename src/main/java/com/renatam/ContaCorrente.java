@@ -36,12 +36,16 @@ public class ContaCorrente {
     }
 
     public boolean deposito(double valor) {
-        if(categoria == Categoria.PLATINUM){
-            saldo += valor+(2.5*valor)/100;
-        }else if(categoria == Categoria.GOLD){
-            saldo += valor+valor/100;
+        if(valor < 0){
+            return false;
         }else{
-            saldo += valor;
+            if(categoria == Categoria.PLATINUM){
+                saldo += valor+(2.5*valor)/100;
+            }else if(categoria == Categoria.GOLD){
+                saldo += valor+valor/100;
+            }else{
+                saldo += valor;
+            }
         }
 
         this.checarUpgradeDeConta();

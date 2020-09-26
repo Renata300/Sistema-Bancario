@@ -2,6 +2,8 @@ package com.renatam;
 
 import static org.junit.Assert.*;
 
+import java.beans.Transient;
+
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.Assert;
@@ -24,6 +26,13 @@ public class ContaTest
         var expectedCategory = Categoria.SILVER;
 
         Assert.assertEquals(expectedBalance, cc.getSaldo(), 0.001);
+    }
+
+    @Test
+    public void depositaRetira()
+    {
+        Assert.assertTrue(cc.deposito(500));
+        Assert.assertTrue(cc.retirada(200));
     }
     
 //     @Test
