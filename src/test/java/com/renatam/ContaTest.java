@@ -35,6 +35,30 @@ public class ContaTest
         Assert.assertTrue(cc.retirada(200));
     }
     
+    @Test
+    public void covertSilverToGold() //quando passa de silver para gold
+    {
+
+    }
+
+    @Test
+    public void convertGoldToPlatinum() //quando passa de gold para platinum
+    {
+
+    }
+
+    @Test
+    public void convertPlatinumToGold() //quando passa de platinum para gold
+    {
+
+    }
+
+    @Test
+    public void convertGoldToSilver() //quando passa de gold para silver
+    {
+
+    }
+
 //     @Test
 //     public void saldoInicialMedio()
 //     {
@@ -44,28 +68,5 @@ public class ContaTest
 //     public void saldoInicialAlto()
 //     {
 //         Assertions.assertEqual(250000, saldo, categoria);
-//     }
-//     @Test
-//     public void siverGold()
-//     {
-//         Assertions.assertEqual(50000, saldo, categoria);
-//     }
-
-//     @Test
-//     public void goldPlatinum()
-//     {
-//         Assertions.assertEqual(200000, saldo, categoria);
-//     }
-
-//     @Test
-//     public void platinumGold()
-//     {
-//         Assertions.assertEqual(90000, saldo, categoria);
-//     }
-
-//     @Test
-//     public void goldSilver()
-//     {
-//         Assertions.assertEqual(24999, saldo, categoria);
 //     }
 }
