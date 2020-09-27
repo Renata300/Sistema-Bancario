@@ -52,7 +52,7 @@ public class ContaTest
     }
 
     @Test
-    public void covertSilverToGold2() //vericar se pula
+    public void notCovertSilverToPlatinum() //vericar se pula
     {
         cc.deposito(201000);
         var categoriaEsperada = Categoria.GOLD;
@@ -78,7 +78,6 @@ public class ContaTest
         cc.deposito(50000);
         cc.deposito(150000);
         cc.retirada(120000);
-        System.out.println(cc.getSaldo());
         var categoriaEsperada = Categoria.GOLD;
         var categoriaAtual = cc.getCategoria();
 
@@ -86,7 +85,7 @@ public class ContaTest
     }
 
     @Test
-    public void convertPlatinumToGold2() //verificar se pula
+    public void notConvertPlatinumToSilver() //verificar se pula
     {
         cc.deposito(50000);
         cc.deposito(150000);
